@@ -1,0 +1,607 @@
+/* Fonts are served from this site (not Google Fonts), so visitors' addresses aren't sent to Google (GDPR).
+   Latin + Latin Extended subsets of Gloock, Nothing You Could Do and Syne (variable, 400–600), SIL Open Font License. */
+@font-face{font-family:'Gloock';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/gloock-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Gloock';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/gloock-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Nothing You Could Do';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/nothing-you-could-do-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Syne';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/syne-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Syne';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/syne-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+/* =========================================================
+   LOVE ALL v6 · Clay — design tokens (from Figma LA4 system)
+   ========================================================= */
+:root{
+  --wine:#6b1020;        /* la-surface-page (dark) / la-text-primary (light) */
+  --wine-deep:#450a14;   /* footer surface */
+  --cream:#f8f2df;       /* la-surface-page (light) / la-light */
+  --card:#efe5c9;        /* la-surface-card */
+  --accent:#d4321f;      /* la-accent-fill / la-text-headline */
+  --ball:#dde64a;        /* la-accent-ball — only for the ball & hand notes */
+  --court:#c4552f;       /* la-court */
+  --sand:#ddbf96;        /* la-sand */
+  --pile:#b8c233;
+  --ink-shadow:rgba(51,8,13,.22);
+  --spring:cubic-bezier(.34,1.7,.5,1);
+  --ease:cubic-bezier(.2,.7,.2,1);
+
+  --f-serif:"Gloock", Georgia, serif;
+  --f-sans:"Syne", system-ui, sans-serif;
+  --f-hand:"Nothing You Could Do", cursive;
+  --z:1;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--wine-deep)}
+body{background:var(--wine-deep);color:var(--wine);font-family:var(--f-sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:none}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0}
+input{font:inherit;color:inherit}
+
+/* The page is drawn on the 1440 Figma canvas and scaled to the viewport */
+.z{zoom:var(--z)}
+.page{width:1440px;overflow:clip}
+
+/* ---------- Type scale (LA4) ---------- */
+.display{font:400 362px/.86 var(--f-serif);letter-spacing:-.035em;white-space:nowrap}
+.h1{font:400 120px/.96 var(--f-serif);letter-spacing:-.03em;white-space:nowrap}
+.h1-92{font:400 92px/.9 var(--f-serif);letter-spacing:-.03em;white-space:nowrap}
+.h2{font:400 88px/1 var(--f-serif);letter-spacing:-.025em;white-space:nowrap}
+.h3{font:400 56px/1.06 var(--f-serif);letter-spacing:-.02em;white-space:nowrap}
+.m-display{font:400 54px/.96 var(--f-serif);letter-spacing:-.02em}
+.h4{font:400 32px/1.18 var(--f-serif);letter-spacing:-.01em;white-space:nowrap}
+.h5{font:400 22px/1.26 var(--f-serif);letter-spacing:-.005em}
+.lead{font:500 22px/1.42 var(--f-sans)}
+.lead-m{font:500 22px/1.36 var(--f-sans)}
+.body{font:400 17px/1.52 var(--f-sans)}
+.body-s{font:400 15px/1.56 var(--f-sans)}
+.label{font:600 14px/1.3 var(--f-sans);letter-spacing:.01em;white-space:nowrap}
+.caption{font:500 12px/1.35 var(--f-sans);letter-spacing:.01em;white-space:nowrap}
+.note-l{font:400 40px/1.05 var(--f-hand);white-space:nowrap}
+.note-m{font:400 26px/1.12 var(--f-hand);white-space:nowrap}
+.accent{color:var(--accent)}
+
+/* ---------- Sections ---------- */
+.sec{position:relative;width:1440px}
+.sec > *{position:absolute}
+.dark{background:var(--wine);color:var(--cream)}
+.cream{background:var(--cream);color:var(--wine)}
+.card{background:var(--card);color:var(--wine)}
+.court{background:var(--court)}
+.center{left:0;right:0;margin:0 auto;text-align:center}
+.col{display:flex;flex-direction:column;align-items:flex-start}
+
+/* Pin = a zero-size anchor at an element's centre, so rotated things keep their Figma centre */
+.pin{width:0;height:0;display:flex;align-items:center;justify-content:center}
+.pin > *{flex:none}
+
+/* ---------- Components ---------- */
+/* Ball — real tennis ball. Image carries its own shadow */
+.ball{width:var(--s);height:var(--s);display:block}
+.ball img{position:absolute;left:-15%;top:-8.75%;width:130%;height:130%;pointer-events:none}
+.sec > .ball, .nav .ball, .slot .ball{position:absolute}
+.nav .ball{position:relative}
+
+/* Pill — outlined, always straight */
+.pill{display:inline-flex;align-items:center;background:var(--cream);color:var(--wine);border:1.5px solid var(--wine);border-radius:999px;padding:9px 18px}
+.pill-xl{position:absolute;font:600 30.8px/1.3 var(--f-sans);letter-spacing:.01em;border-width:3.3px;padding:19.8px 39.6px;white-space:nowrap}
+.pill-dark{background:var(--wine);color:var(--cream);border-color:var(--cream)}
+
+/* Sticker — outlined pill on dark, tilted like a stamp */
+.sticker{display:inline-flex;font:600 14px/1.3 var(--f-sans);white-space:nowrap;background:var(--wine);color:var(--cream);border:1.5px solid var(--cream);border-radius:999px;padding:8px 16px}
+
+/* Button — pill. Primary: one per screen. Outline: secondary */
+.btn{display:inline-flex;gap:10px;align-items:center;border-radius:999px;padding:16px 28px;transition:transform .35s var(--spring),background-color .2s,color .2s}
+.btn span{transition:transform .35s var(--spring)}
+@media (hover:hover){.btn:hover span{transform:translateX(4px)}}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:var(--accent);color:var(--cream)}
+@media (hover:hover){.btn-primary:hover{background:#bf2a18}}
+.btn-outline{border:1.5px solid currentColor;padding:14.5px 26.5px}
+@media (hover:hover){.btn-outline:hover{background:var(--wine);color:var(--cream);border-color:var(--wine)}}
+.btn-cream{background:var(--cream);color:var(--wine)}
+@media (hover:hover){.btn-cream:hover{background:#fff}}
+
+.photo{border-radius:36px;overflow:hidden;background:rgba(0,0,0,.08)}
+.photo img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- Tennis-ball cursor ---------- */
+@media (pointer:fine){
+  html.has-ball-cursor, html.has-ball-cursor *{cursor:none!important}
+  html.has-ball-cursor input:not([type=checkbox]){cursor:text!important}
+  html.has-ball-cursor.cursor-native, html.has-ball-cursor.cursor-native *{cursor:auto!important}
+}
+html.cursor-native .cursor{opacity:0}
+/* One constant size (scaled with the page), only a small lift over things you can click */
+.cursor{position:fixed;left:0;top:0;z-index:1000;pointer-events:none;width:0;height:0;opacity:0;transition:opacity .25s}
+.cursor.on{opacity:1}
+.cursor-inner{position:absolute;left:0;top:0;scale:var(--cz,1);transform-origin:0 0}
+.cursor-body{position:absolute;width:30px;height:30px;left:-15px;top:-15px;transition:scale .35s var(--spring)}
+.cursor-ball{width:100%;height:100%;border-radius:50%;
+  background:url(img/ball.png) no-repeat;background-size:130% 130%;background-position:50% 29.2%;
+  will-change:transform}
+.cursor-shadow{position:absolute;width:26px;height:10px;left:-11px;top:14px;border-radius:50%;background:rgba(31,6,10,.35);filter:blur(4px);transition:transform .3s var(--spring),opacity .3s}
+.cursor.hover .cursor-body{scale:1.15}
+.cursor.hover .cursor-shadow{transform:translateY(3px) scale(1.15);opacity:.8}
+.cursor.text .cursor-body{scale:.45;translate:16px 6px}
+.cursor.text .cursor-shadow{opacity:0}
+.cursor.down .cursor-ball{animation:none}
+.cursor.bounce .cursor-body{animation:bounce .55s var(--ease)}
+@keyframes bounce{
+  0%{transform:translateY(0) scale(1.18,.78)}
+  35%{transform:translateY(-16px) scale(.92,1.1)}
+  70%{transform:translateY(0) scale(1.08,.9)}
+  100%{transform:translateY(0) scale(1)}
+}
+.cursor.down .cursor-body{transform:scale(1.18,.78) translateY(4px);transition:transform .08s}
+.court-mark{position:fixed;z-index:999;pointer-events:none;width:44px;height:16px;margin:-2px 0 0 -22px;border-radius:50%;border:2px solid rgba(248,242,223,.7);animation:mark .7s var(--ease) forwards}
+@keyframes mark{from{transform:scale(.3);opacity:1}to{transform:scale(1.8);opacity:0}}
+
+/* ---------- Nav / Sticky v5 ---------- */
+.nav-wrap{position:fixed;top:0;left:0;width:1440px;z-index:50;padding:24px 48px 0;pointer-events:none}
+.nav{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;background:var(--cream);color:var(--wine);
+  border-radius:999px;padding:10px 10px 10px 28px;filter:drop-shadow(0 14px 15px var(--ink-shadow))}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-links{display:flex;gap:40px}
+.nav-links a{position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-links a.active::after{transform:scaleX(1)}
+@media (hover:hover){.nav-links a:hover::after{transform:scaleX(1)}}
+.nav-right{display:flex;gap:12px;align-items:center}
+
+/* ---------- Hero ---------- */
+/* Scroll-scrubbed video: the hero pins for --scrub px of scroll while the clip plays forwards/backwards */
+:root{--vh:calc(100vh / var(--z))}
+.hero-track{--scrub:2400px;height:calc(var(--vh) + var(--scrub));position:relative;background:var(--wine)}
+/* The video stops on its all-red frame. The real Manifesto sits right under the pinned video
+   (pulled up by one screen) and dissolves in on scroll — the same dissolve the clip does —
+   so it is complete at any window proportion. Opacity is driven from app.js */
+#about{z-index:3;margin-top:calc(-1 * var(--vh));opacity:0;pointer-events:none}
+#about.revealed{pointer-events:auto}
+.hero{position:sticky!important;top:0;height:var(--vh);overflow:hidden;background:var(--wine)}
+.hero-media{inset:0;overflow:hidden}
+.hero-media video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-pills{left:51px;right:51px;bottom:60px;display:flex;justify-content:space-between;will-change:transform,opacity}
+.hero-pills .pill-xl{position:static}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Manifesto ---------- */
+.score-ball{transition:transform .5s var(--spring)}
+@media (hover:hover){.score-ball:hover{transform:translateY(-10px) rotate(40deg)}}
+
+/* ---------- Side cards ---------- */
+.side-card{position:relative;display:block;width:660px;height:740px;border-radius:40px;overflow:hidden;text-align:left;
+  rotate:var(--r);transition:rotate .7s var(--spring),translate .7s var(--spring),box-shadow .4s}
+.side-card.white{background:var(--card);color:var(--wine)}
+.side-card.black{background:var(--wine);color:var(--cream)}
+@media (hover:hover){.side-card:hover{rotate:calc(var(--r) * -1);translate:0 -14px;box-shadow:0 30px 40px rgba(51,8,13,.18)}}
+.side-card > *{position:absolute}
+.side-photo{left:35px;top:30px;width:590px;height:430px;border-radius:32px;overflow:hidden}
+.side-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.white .side-photo img{object-position:50% 44%}
+.black .side-photo img{object-position:50% 7%}
+@media (hover:hover){.side-card:hover .side-photo img{transform:scale(1.04)}}
+.side-title{left:36px;top:474px}
+.side-body{left:40px;top:576px}
+.side-note{left:372px;top:596px;rotate:2deg}
+.side-btn{left:40px;top:664px}
+.white .side-btn{border-color:var(--wine)}
+.side-picked{right:40px;top:48px;rotate:8deg;scale:0;transition:scale .5s var(--spring)}
+.white .side-picked{background:var(--wine);color:var(--cream);border-color:var(--wine)}
+.black .side-picked{background:var(--cream);color:var(--wine);border-color:var(--cream)}
+.side-card[aria-pressed=true] .side-picked{scale:1}
+.sides-ball{z-index:5;pointer-events:none}
+.dress{left:0;right:0;top:1313px;display:flex;justify-content:center;gap:20px;align-items:center}
+
+/* ---------- Marquee ---------- */
+.marquee{height:56px;background:var(--wine);color:var(--cream);overflow:hidden;display:flex;align-items:center;width:1440px}
+.marquee-track{display:flex;gap:24px;align-items:center;white-space:nowrap;animation:marquee 40s linear infinite;padding-left:24px}
+.marquee-track .ball{position:relative;flex:none}
+@media (hover:hover){.marquee:hover .marquee-track{animation-play-state:paused}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- Schedule ---------- */
+.day{top:300px;width:432px;height:460px;border-radius:36px;overflow:hidden}
+.day > *{position:absolute}
+.day img{inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+@media (hover:hover){.day:hover img{transform:scale(1.05)}}
+.scrim{left:0;top:230px;width:100%;height:230px;background:linear-gradient(to top,rgba(51,8,13,.55),rgba(51,8,13,0))}
+.day-num{left:24px;top:329px;color:var(--cream)}
+.set-head{top:784px;display:flex;gap:14px;align-items:center}
+.set-body{top:840px;width:392px}
+
+.courts{left:48px;top:1040px;width:1344px;height:590px;border-radius:40px;overflow:hidden;background:var(--wine);color:var(--cream)}
+.courts > *{position:absolute}
+.courts .rule{left:56px;width:640px;height:1px;background:var(--cream);opacity:.5}
+.court-map{left:1088px;top:372px;width:200px;height:128px;display:grid;grid-template-columns:repeat(3,60px);gap:10px}
+.mini-court{width:60px;height:36px;border:1px solid var(--cream);border-radius:6px;overflow:hidden;transition:transform .4s var(--spring)}
+.mini-court.match{background:var(--court)}
+.mini-court svg{display:block}
+.mini-court:not(.match) svg{opacity:.6}
+@media (hover:hover){.mini-court:hover{transform:scale(1.12)}}
+
+.timeline{left:48px;top:2120px;width:1344px;height:1.5px;background:rgba(107,16,32,.25)}
+.timeline-fill{position:absolute;inset:0;background:var(--wine);transform-origin:left;transform:scaleX(0)}
+.slot{top:1850px;width:318px;height:420px}
+.slot > *{position:absolute}
+.slot-photo{left:0;top:0;width:318px;height:240px;border-radius:28px}
+.slot-ball{left:0;top:259px;transition:transform .5s var(--spring),opacity .3s;opacity:.25;transform:scale(.6)}
+.slot.lit .slot-ball{opacity:1;transform:scale(1)}
+.slot-time{left:0;top:298px}
+.slot-label{left:0;top:366px;white-space:nowrap}
+
+.coach-copy{left:732px;top:2376px;display:flex;flex-direction:column;gap:22px}
+.facts{display:flex;gap:10px}
+.coach{position:relative;width:432px;height:600px;border-radius:36px;overflow:hidden;rotate:var(--r);transition:rotate .7s var(--spring),translate .7s var(--spring)}
+@media (hover:hover){.coach:hover{rotate:calc(var(--r) * -1);translate:0 -12px}}
+.coach.light{background:var(--cream);color:var(--wine)}
+.coach.dark-c{background:var(--wine);color:var(--cream)}
+.coach > *{position:absolute}
+.coach-photo{left:24px;top:24px;width:384px;height:320px;border-radius:28px}
+.coach-name{left:24px;top:362px}
+.coach-desc{left:26px;top:500px}
+.coach-note{left:206px;top:496px}
+
+/* ---------- Ball drop ---------- */
+/* Layers, bottom → top: court lines · pile · soft fade into the next section · balls that roll over the edge · headings.
+   The section sits above its neighbours (z-index) and only clips sideways, so balls can fall in
+   from above the viewport over the previous section and roll a little onto the next one. */
+#balldrop{z-index:2;overflow-x:clip;overflow-y:visible}
+.court-line{background:var(--cream);z-index:0}
+.pile{inset:0;z-index:1;pointer-events:none}
+.pile-over{z-index:3}
+.pile-fade{left:0;top:880px;width:1440px;height:270px;z-index:2;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(107,16,32,0) 0,rgba(107,16,32,.55) 70px,var(--wine) 120px,var(--wine) 100%)}
+.match-ends,.sides-gone{z-index:4}
+
+/* One ball = a fixed slot (never animated) + a contact shadow on the court + the ball itself.
+   The ball is the project's ball picture, clipped to its circle so only our soft court shadow shows. */
+.pb{position:absolute}
+.pb-ball{position:absolute;inset:0;border-radius:50%;overflow:hidden;will-change:transform}
+.pb-ball img{position:absolute;max-width:none}
+.pb-shadow{position:absolute;left:4%;width:92%;top:80%;height:30%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(40,8,4,.42),rgba(40,8,4,.18) 55%,rgba(40,8,4,0));will-change:transform,opacity}
+/* before the drop the pile is not there yet */
+/* hidden until the drop; set on the ball and its shadow themselves, not only inherited from .pb:
+   Chrome can keep a stale inherited value on elements with finished Web Animations, leaving the pile invisible */
+#balldrop:not(.dropped) #pile .pb:not(.flyer), #balldrop:not(.dropped) #pileOver .pb,
+#balldrop:not(.dropped) #pile .pb:not(.flyer) > *, #balldrop:not(.dropped) #pileOver .pb > *{visibility:hidden}
+/* decorative balls next to the heading sway until they fall into the pile */
+.pb.flyer .pb-ball{animation:sway 3.6s ease-in-out infinite}
+.pb.flyer.fallen .pb-ball{animation:none}
+@keyframes sway{0%,100%{translate:0 0;rotate:-4deg}50%{translate:0 -8px;rotate:5deg}}
+
+/* "The sides disappear." only once the pile is complete */
+.sides-gone{opacity:0;translate:0 24px;transition:opacity .45s,translate .55s var(--spring)}
+#balldrop.landed .sides-gone{opacity:1;translate:0 0}
+
+/* ---------- Evenings ---------- */
+.reason{top:866px;width:432px;height:380px;border-radius:36px;overflow:hidden}
+.reason > *{position:absolute}
+.reason img{inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+@media (hover:hover){.reason:hover img{transform:scale(1.05)}}
+.closing{left:48px;top:1492px;width:1344px;height:460px;border-radius:40px;overflow:hidden}
+.closing > *{position:absolute}
+.closing img{inset:0;width:100%;height:100%;object-fit:fill}
+.closing-scrim{inset:0;background:rgba(31,10,8,.42)}
+.closing .h2{left:0;right:0;top:186px;text-align:center;color:var(--cream)}
+
+/* ---------- Passes (ticket with perforated stub) ---------- */
+.pass{position:absolute;left:48px;width:1344px;height:304px;cursor:pointer}
+.pass-body{position:absolute;inset:0;border-radius:28px;overflow:hidden;transition:translate .5s var(--spring),box-shadow .4s}
+@media (hover:hover){.pass:hover .pass-body{translate:0 -6px;box-shadow:0 22px 30px rgba(51,8,13,.14)}}
+.pass-body > *{position:absolute}
+.pass.p1 .pass-body{background:var(--card);color:var(--wine)}
+.pass.p2 .pass-body{background:var(--wine);color:var(--cream)}
+.pass.p3 .pass-body{background:var(--sand);color:var(--wine)}
+.pass-included{left:626px;top:36px;display:flex;flex-direction:column;gap:9px}
+.pass-item{display:flex;gap:12px;align-items:flex-start}
+.pass-item .ball{position:relative;margin-top:7px;flex:none}
+.perf{left:1013px;top:28px;height:248px;border-left:1.5px dashed currentColor;opacity:.7}
+.notch{position:absolute;left:996px;width:36px;height:36px;border-radius:50%;background:var(--cream);z-index:2}
+.pass .pass-cta{left:1052px;top:224px}
+.pass.selected .pass-body{box-shadow:0 0 0 3px var(--accent)}
+.pass .sel-mark{left:1186px;top:124px;scale:0;transition:scale .5s var(--spring)}
+.pass.selected .sel-mark{scale:1}
+
+/* ---------- FAQ ---------- */
+.faq{left:732px;top:104px;width:660px}
+.faq-item{border-bottom:1.5px solid var(--wine);padding:26px 0}
+.faq-q{display:flex;gap:24px;align-items:center;width:100%;text-align:left}
+.faq-q .h4{flex:1;white-space:normal}
+.toggle{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--wine);display:flex;align-items:center;justify-content:center;font:500 22px/1 var(--f-sans);flex:none;transition:background-color .25s,color .25s,rotate .5s var(--spring)}
+.faq-item.open .toggle{background:var(--accent);border-color:var(--accent);color:var(--cream);rotate:180deg}
+@media (hover:hover){.faq-q:hover .toggle{rotate:90deg}}
+@media (hover:hover){.faq-item.open .faq-q:hover .toggle{rotate:180deg}}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.faq-a > div{overflow:hidden}
+.faq-a p{width:580px;padding-top:14px}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+
+/* ---------- Request form ---------- */
+[hidden]{display:none!important}
+/* In flow, so the section grows with the form instead of the form spilling out */
+#request{display:flow-root}
+.sec > .form{position:relative;margin:120px 0 120px 732px;z-index:1}
+.form{width:660px;background:var(--cream);color:var(--wine);border-radius:40px;padding:48px}
+.form-body{display:flex;flex-direction:column;gap:30px;align-items:flex-start}
+.field{display:flex;flex-direction:column;gap:10px;padding-bottom:14px;border-bottom:1.5px solid var(--wine);width:100%;position:relative;transition:border-color .2s}
+.field input{border:0;background:none;outline:none;width:100%;color:var(--wine)}
+.field input::placeholder{color:var(--wine);opacity:.35}
+.field:focus-within{border-bottom-color:var(--accent)}
+.field-err{position:absolute;right:0;top:0;color:var(--accent);opacity:0;transition:opacity .2s}
+.field.err{border-bottom-color:var(--accent)}
+.field.err .field-err{opacity:1}
+.group{display:flex;flex-direction:column;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--wine);border-radius:999px;padding:11px 20px;transition:background-color .2s,color .2s,transform .35s var(--spring)}
+@media (hover:hover){.chip:hover{background:rgba(107,16,32,.07)}}
+.chip:active{transform:scale(.94)}
+.chip[aria-pressed=true]{background:var(--wine);color:var(--cream)}
+.extra{display:grid;grid-template-rows:1fr;width:100%;transition:grid-template-rows .45s var(--ease),opacity .3s,margin .45s var(--ease)}
+.extra.hide{grid-template-rows:0fr;opacity:0;margin-bottom:-30px}
+.extra > .extra-inner{overflow:hidden;background:var(--card);border-radius:24px;display:flex;flex-direction:column;gap:24px}
+.extra:not(.hide) > .extra-inner{padding:24px}
+.extra.hide > .extra-inner{padding:0 24px}
+.check{display:flex;gap:14px;align-items:center;cursor:pointer}
+.check input{position:absolute;opacity:0;pointer-events:none}
+.check-box{width:26px;height:26px;border:1.5px solid var(--wine);border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;transition:background-color .2s}
+.check-box::after{content:"";width:10px;height:6px;border-left:2px solid var(--cream);border-bottom:2px solid var(--cream);rotate:-45deg;translate:0 -1px;scale:0;transition:scale .3s var(--spring)}
+.check input:checked + .check-box{background:var(--wine)}
+.check input:checked + .check-box::after{scale:1}
+.check input:focus-visible + .check-box{outline:2px solid var(--accent);outline-offset:2px}
+.form-done{display:flex;flex-direction:column;gap:24px;align-items:flex-start;padding:24px 0}
+.form-done[hidden]{display:none}
+.done-title{white-space:normal}
+.burst{position:fixed;z-index:998;pointer-events:none;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:url(img/ball.png) no-repeat;background-size:130% 130%;background-position:50% 29.2%}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--wine-deep);color:var(--cream)}
+.foot-col{top:104px;display:flex;flex-direction:column;gap:12px;font:600 14px/1.3 var(--f-sans);letter-spacing:.01em}
+.foot-col .caption{opacity:.65}
+@media (hover:hover){.foot-col a:hover,.foot-legal a:hover{color:var(--ball)}}
+.foot-rule{left:48px;width:1344px;height:1px;background:var(--cream);opacity:.35}
+.foot-legal{left:auto;right:48px;top:796px;display:flex;gap:28px}
+.foot-ball{transition:transform .6s var(--spring)}
+@media (hover:hover){.foot-ball:hover{transform:translateY(-24px) rotate(120deg)}}
+
+/* ---------- Scroll reveal ---------- */
+[data-reveal]{opacity:0;translate:0 40px;transition:opacity .8s var(--ease),translate .9s var(--ease),rotate .7s var(--spring)}
+[data-reveal].in{opacity:1;translate:0 0}
+@media (hover:hover){.side-card[data-reveal].in:hover,.coach[data-reveal].in:hover{translate:0 -14px}}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  [data-reveal]{opacity:1;translate:none}
+}
+
+/* Photos cropped by hand in Figma v6: exact crop boxes taken from each image fill */
+img.crop{position:absolute;max-width:none;object-fit:fill!important;object-position:0 0!important;inset:auto}
+.closing img.crop-closing{object-fit:fill;transform-origin:0 0;transform:matrix(1.03518,-0.03529,0.15405,4.54227,-59.14,-791.01)}
+
+/* Wrappers that only matter on mobile (swipe rows). On desktop they have no box of their own,
+   so their children keep their absolute Figma positions inside the section. */
+.ct{display:contents}
+.ct > *{position:absolute}
+
+/* =========================================================
+   MOBILE + TABLET (≤ 1023px) — a 390px canvas scaled to the phone's width. On tablets the scale is
+   capped and the canvas grows wider instead (--W, set in app.js), so the text stays a comfortable size.
+   The 1440 absolute layout turns into rows: same tokens, type, components and photos.
+   ========================================================= */
+@media (max-width:1023px){
+  .page,.sec,.marquee,.nav-wrap{width:var(--W,390px)}
+  html.has-ball-cursor, html.has-ball-cursor *{cursor:auto!important}
+  .cursor{display:none}
+
+  /* type, one step down */
+  .display{font-size:92px}
+  .h1{font-size:54px;white-space:normal}
+  .h1-92{font-size:50px;white-space:normal}
+  .h2{font-size:42px;white-space:normal}
+  .h3{font-size:34px;white-space:normal}
+  .h4{font-size:24px;white-space:normal}
+  .lead,.lead-m{font-size:17px}
+  .body{font-size:15px}
+  .body-s{font-size:14px}
+  .note-l{font-size:28px}
+  .note-m{font-size:20px}
+
+  /* nav: logo + the one primary button */
+  .nav-wrap{padding:12px 12px 0}
+  .nav{padding:6px 6px 6px 14px}
+  .nav-links,.nav-right .pill{display:none}
+  .nav-logo{gap:8px}
+  .nav-logo .ball{--s:22px!important}
+  .nav-logo .h4{font-size:24px;white-space:nowrap}
+  .nav .btn{padding:12px 18px}
+
+  /* hero: the vertical cut of the clip fills the whole screen */
+  :root{--vh:calc(100svh / var(--z))}
+  .hero-track{--scrub:1500px}
+  .hero-pills{left:20px;right:20px;bottom:36px}
+  .pill-xl{font-size:15px;border-width:1.5px;padding:10px 18px}
+
+  /* ---- flow sections ---- */
+  .flow{display:flex;flex-flow:row wrap;justify-content:center;align-items:center;align-content:flex-start;
+    gap:20px 10px;padding:104px 20px 80px;height:auto!important;min-height:0!important}
+  .flow > *{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+    flex:0 0 100%;max-width:100%;order:var(--o,0)}
+  .flow > :is(.pin,.ball,.m-display,.btn){flex:0 0 auto}
+  .flow .pin{width:auto;height:auto;margin:var(--m,0)}
+  .flow .photo{width:var(--mw,100%)!important;height:var(--mh,240px)!important;border-radius:26px!important}
+  .flow :is(.body,.body-s,.lead,.lead-m) br{display:none}
+  .flow .sticker{font-size:13px;padding:7px 14px}
+
+  /* Manifesto */
+  #about{gap:18px 10px;padding-top:112px}
+  #about .score-ball{--s:56px!important}
+  #about .m-display{font-size:44px}
+
+  /* Choose your side: cards stack, the ball sits between them */
+  .side-card{width:350px;height:auto;display:flex;flex-direction:column;align-items:flex-start;padding:12px 12px 26px;border-radius:32px}
+  .side-card > *{position:relative}
+  .side-photo{left:auto;top:auto;width:326px;height:238px;border-radius:24px}
+  .side-title{left:auto;top:auto;margin:18px 0 0 6px}
+  .side-body{left:auto;top:auto;margin:8px 0 0 8px}
+  .side-note{left:auto;top:auto;margin:12px 0 0 8px}
+  .side-btn{left:auto;top:auto;margin:18px 0 0 8px}
+  .side-card .side-picked{position:absolute;right:24px;top:24px}
+  /* each card on its own row, centred; the ball sits at the cards' right edge (on tablets the canvas is wider) */
+  #sides > .pin{flex:0 0 100%;display:flex;justify-content:center}
+  #sides .sides-ball{--s:84px!important;margin:-50px calc((var(--W,390px) - 390px) / 2 + 6px) -50px auto;z-index:5}
+  .dress{flex-direction:column;gap:12px;text-align:center}
+
+  /* swipe rows (days, a day at the club, coaches) */
+  .ct.days-row,.ct.slots-row,.ct.coach-row{display:flex;flex:0 0 auto;width:var(--W,390px);max-width:none;margin:0 -20px;
+    padding:6px 20px 14px;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;align-items:flex-start}
+  .ct::-webkit-scrollbar{display:none}
+  .ct > *{position:relative!important;left:auto!important;top:auto!important;scroll-snap-align:center;flex:0 0 auto}
+
+  /* Schedule */
+  .day-col{display:flex!important;flex-direction:column;gap:14px;width:300px}
+  .day-col > *{position:relative!important;left:auto!important;top:auto!important}
+  .day{width:300px;height:320px;border-radius:28px}
+  .day-num{top:auto;bottom:14px;left:20px}
+  .scrim{top:auto;bottom:0;height:60%}
+  .set-body{width:auto!important}
+
+  .courts{height:auto;border-radius:30px;display:flex;flex-wrap:wrap;gap:10px 12px;padding:28px 22px;align-items:flex-start}
+  .courts > *{position:relative!important;left:auto!important;top:auto!important;flex:0 0 100%}
+  .courts > .h4{margin-top:8px}
+  .courts .rule{margin:6px 0}
+  .courts > .photo{flex:0 0 auto;margin-top:10px}
+  .courts > .pin{position:absolute!important;flex:none;z-index:2}
+  .courts > .pin:nth-last-child(2){left:6px!important;top:552px!important}
+  .courts > .pin:last-child{left:206px!important;top:802px!important}
+  .courts .pin .pill{font-size:14px;padding:8px 14px}
+  .court-map{flex:0 0 auto!important;margin-top:6px}
+  .courts > .caption{flex:1 1 0;white-space:normal;margin-top:6px}
+
+  .timeline{display:none}
+  .slot{width:250px;height:auto;display:flex;flex-direction:column;gap:10px}
+  .slot > *{position:relative!important;left:auto!important;top:auto!important}
+  .slot-photo{width:250px!important;height:188px!important}
+  .slot .slot-ball{opacity:1;transform:none}
+  .slot-label{white-space:normal}
+
+  .coach-copy{gap:16px}
+  .facts{flex-wrap:wrap}
+  .coach-row{padding-top:16px!important;padding-bottom:22px!important}
+  .coach{width:280px;height:auto;display:flex;flex-direction:column;align-items:flex-start;padding:12px 12px 24px;border-radius:30px}
+  .coach > *{position:relative}
+  .coach-photo{left:auto;top:auto;width:256px!important;height:213px!important;border-radius:22px}
+  .coach-name{left:auto;top:auto;margin:16px 0 0 4px}
+  .coach-desc{left:auto;top:auto;margin:10px 0 0 6px}
+  .coach-note{left:auto;top:auto;margin:10px 0 0 6px}
+  .deco-ball{display:none!important}
+
+  /* Ball drop: the same 1440 court at half size (or wider on tablets), centred, headings moved into the visible part */
+  #balldrop{zoom:var(--dz,.5);width:1440px;margin-left:var(--dm,-330px)}
+  #balldrop .match-ends{left:370px!important;top:150px!important;font-size:88px;white-space:nowrap}
+  #balldrop .sides-gone{left:370px!important;top:620px!important;font-size:88px;white-space:nowrap}
+
+  /* Evenings */
+  .reason{width:100%;height:280px;border-radius:28px}
+  .reason + .h4{margin-top:-4px}
+  .closing{width:100%;height:400px;border-radius:30px}
+  .closing img.crop-closing{transform:none;object-fit:cover;object-position:50% 72%}
+  .closing .h2{top:50%;translate:0 -50%;padding:0 24px;font-size:46px}
+
+  /* Passes: tickets turn vertical, the perforation runs across */
+  #passList{display:flex;flex-direction:column;gap:20px}
+  .pass{position:relative;left:auto;top:auto!important;width:100%;height:auto}
+  .pass-body{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:28px 24px 26px;gap:4px;border-radius:26px}
+  .pass-body > *{position:relative!important;left:auto!important;top:auto!important}
+  .pc-brand{order:0}
+  .pc-name{order:1}
+  .pass-body > .note-m{order:2;margin-bottom:10px}
+  .pc-price{order:3}
+  .pc-per{order:4}
+  .pass-included{order:5;margin-top:16px}
+  .pass-body .perf{order:6;align-self:stretch;height:0;border-left:0;border-top:1.5px dashed currentColor;margin:20px 0 16px;overflow:visible}
+  .pass-body .perf::before,.pass-body .perf::after{content:"";position:absolute;top:-18px;width:36px;height:36px;border-radius:50%;background:var(--cream)}
+  .pass-body .perf::before{left:-42px}
+  .pass-body .perf::after{right:-42px}
+  .pc-no{order:7}
+  .pc-code{order:8}
+  .pass-body > .side-tag{order:9;margin-top:8px}
+  .pc-date{order:10;margin-top:14px;opacity:.75}
+  .pass .pass-cta{order:11;margin-top:18px}
+  .pass-body > .pill-dark{position:absolute!important;right:20px;top:24px!important}
+  .pass .sel-mark{position:absolute!important;right:20px;top:auto!important;bottom:30px}
+  .notch{display:none}
+
+  /* FAQ */
+  .faq{width:100%}
+  .faq-q{gap:16px}
+  .faq-q .h4{font-size:21px}
+  .toggle{width:38px;height:38px}
+  .faq-a p{width:auto}
+
+  /* Request */
+  #request.flow{display:flex}
+  .flow > .form{margin:20px 0 0;width:100%;padding:28px 20px;border-radius:30px}
+  /* the coaching tick-box and its note wrap inside the card (captions never wrap on desktop) */
+  #form .col{width:100%}
+  #form .col .caption{white-space:normal}
+  .chip{padding:10px 16px}
+  .form-done .h3{font-size:34px}
+
+  /* Footer */
+  .footer.flow{justify-content:flex-start;align-items:flex-start;padding:64px 20px 32px;gap:24px 20px}
+  .foot-col{flex:0 0 calc(50% - 10px)!important}
+  .footer .display{font-size:92px;margin-top:4px}
+  .foot-ball{--s:84px!important;margin:-40px 0 0 auto}
+  .footer > .pin{flex:0 0 100%;justify-content:flex-start}
+  .foot-legal{flex-wrap:wrap;gap:12px 20px}
+}
+@media (max-width:1023px){
+  /* long hand-written notes wrap instead of running off the edge */
+  .flow > :is(.note-m,.note-l), .flow .col .note-m{white-space:normal}
+  /* a softer tilt on the narrow cards */
+  .side-card{rotate:calc(var(--r) * .5)}
+  @media (hover:hover){.side-card:hover{rotate:calc(var(--r) * -.5)}}
+}
+
+/* =========================================================
+   TABLET (761–1023px) — the stacked layout on a wider canvas (--W ≈ 560–760).
+   Collages get fixed rows and photos grow with the canvas, instead of phone-sized pieces
+   wrapping into whatever gaps the wider rows leave.
+   ========================================================= */
+@media (min-width:761px) and (max-width:1023px){
+  /* Manifesto: stickers · two photos with stickers on their lower edge · big photo · two photos.
+     Every pin takes exactly half a row (or a whole one), so nothing drifts into a neighbouring row. */
+  #about > .pin{flex:0 0 calc(50% - 5px);display:flex;justify-content:center}
+  #about > .pin:has(img[src*="m-a40"]){flex-basis:100%}
+  #about > .pin:has(.sticker){justify-content:center}
+  #about > .pin .photo{height:auto!important;aspect-ratio:4/5}
+  #about > .pin .photo:has(img[src*="m-54"]),
+  #about > .pin .photo:has(img[src*="m-32"]){width:calc((var(--W) - 40px) * .40)!important}
+  #about > .pin .photo:has(img[src*="m-a40"]){width:calc((var(--W) - 40px) * .66)!important}
+  #about > .pin .photo:has(img[src*="m-a11"]),
+  #about > .pin .photo:has(img[src*="m-b16"]){width:calc((var(--W) - 40px) * .42)!important}
+  #about .sticker{font-size:15px;padding:9px 18px}
+  #about > .pin[style*="--o:7"]{margin:-34px 0 6px!important;z-index:2}
+
+  /* Nine courts: the two photos share the row at the same height, map and caption below */
+  .courts > .photo:nth-of-type(1){width:calc((var(--W) - 96px) * .58)!important}
+  .courts > .photo:nth-of-type(2){width:calc((var(--W) - 96px) * .42)!important}
+  .courts > .photo{height:calc((var(--W) - 96px) * .72)!important}
+  .courts .pin .pill{font-size:15px;padding:9px 16px}
+}
+
+/* ---------- Touch: no hover, so taps get a short press response instead ---------- */
+html{-webkit-tap-highlight-color:transparent}
+@media (hover:none){
+  .btn:active,.chip:active{scale:.96}
+  .btn-primary:active{background:#bf2a18}
+  .btn-outline:active{background:var(--wine);color:var(--cream);border-color:var(--wine)}
+  .side-card:active{scale:.98}
+  .pass:active .pass-body{translate:0 -4px;box-shadow:0 16px 24px rgba(51,8,13,.14)}
+  .faq-q:active{opacity:.7}
+  .mini-court:active{transform:scale(1.12)}
+  .coach:active{scale:.98}
+}

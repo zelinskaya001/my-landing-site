@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#6b1020">
+<title>Love All · Tennis weekend</title>
+<meta name="description" content="A three-day tennis weekend on the French Riviera, 16–18 July 2027. Team matches by day, music and long tables after sunset.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Link previews (messengers, social). Once the site has its address, make og:image and og:url full URLs, e.g. https://loveall.club/img/og-image.jpg -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Love All">
+<meta property="og:title" content="Love All · Tennis weekend">
+<meta property="og:description" content="A three-day tennis weekend on the French Riviera, 16–18 July 2027. Team matches by day, music and long tables after sunset.">
+<meta property="og:image" content="img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- the two fonts of the first screen, fetched early (self-hosted, see styles.css) -->
+<link rel="preload" href="fonts/gloock-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=37">
+</head>
+<body>
+
+<!-- ============ Tennis-ball cursor ============ -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor-inner">
+    <div class="cursor-shadow"></div>
+    <div class="cursor-body"><div class="cursor-ball"></div></div>
+  </div>
+</div>
+
+<!-- ============ Sticky nav (Nav / Sticky v5) ============ -->
+<div class="nav-wrap z">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-logo" href="#top"><span class="ball" style="--s:28px"><img src="img/ball.png" alt=""></span><span class="h4">Love All</span></a>
+    <div class="nav-links label">
+      <a href="#about">About</a><a href="#schedule">Schedule</a><a href="#evenings">Evenings</a><a href="#passes">Passes</a><a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <span class="pill label">16–18 July · French Riviera</span>
+      <a class="btn btn-primary label" href="#request">Request a pass <span>→</span></a>
+    </div>
+  </nav>
+</div>
+
+<!-- Mobile layout notes: sections marked .flow drop the 1440 absolute layout under 760px and stack as rows.
+     --o = order on mobile, --mw/--mh = photo size on mobile, --m = margin on mobile (for overlaps).
+     .ct wrappers are invisible on desktop (display:contents) and become swipe rows on mobile. -->
+<main class="page z" id="top">
+
+<!-- ============ Hero — scroll video ============ -->
+<div class="hero-track">
+  <section class="sec hero">
+    <div class="hero-media">
+      <video id="heroVideo" data-src="video/love-all-transition.mp4" data-src-mobile="video/love-all-transition-vertical.mp4?v=2" muted playsinline preload="auto" aria-label="A player returns a serve; the camera orbits and the ball flies into the lens"></video>
+    </div>
+    <h1 class="sr-only">Love All</h1>
+    <div class="hero-pills">
+      <span class="pill pill-xl">16–18 July 2027</span>
+      <span class="pill pill-xl">French Riviera</span>
+    </div>
+  </section>
+</div>
+
+<!-- ============ Manifesto ============ -->
+<section class="sec dark flow" id="about" style="height:1450px">
+  <h2 class="h1-92 center" style="top:210px;--o:1" data-reveal>Love means nothing.</h2>
+  <p class="lead-m center" style="top:360px;width:760px;--o:2" data-reveal>In tennis, love is zero. <br>It’s the score before anything happens. <br>Play at your level. Meet beyond it.</p>
+
+  <div class="pin" style="left:199.5px;top:464.8px;--o:6"><div class="photo" style="width:230px;height:290px;rotate:-6deg;--mw:150px;--mh:190px" data-reveal><img loading="lazy" decoding="async" src="img/m-54-v6.jpg" alt=""></div></div>
+  <div class="pin" style="left:1256.5px;top:406px;--o:6"><div class="photo" style="width:240px;height:300px;rotate:5deg;--mw:156px;--mh:195px" data-reveal><img loading="lazy" decoding="async" src="img/m-32-v6.jpg" alt=""></div></div>
+
+  <div class="pin" style="left:200px;top:165px;--o:5"><span class="sticker" style="rotate:-10deg">Serious serves</span></div>
+  <div class="pin" style="left:1259.6px;top:187px;--o:5"><span class="sticker" style="rotate:8deg">New rackets</span></div>
+  <div class="pin" style="left:1030.7px;top:461.5px;--o:7;--m:-26px 0 0"><span class="sticker" style="rotate:-5deg">Long summer evenings</span></div>
+  <div class="pin" style="left:391px;top:458.7px;--o:7;--m:-26px 0 0"><span class="sticker" style="rotate:7deg">Good games</span></div>
+
+  <span class="ball score-ball" style="--s:70px;left:630px;top:490px;--o:3"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span>
+  <span class="m-display" style="position:absolute;left:712px;top:496px;--o:3">:</span>
+  <span class="ball score-ball" style="--s:70px;left:740px;top:490px;--o:3"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span>
+  <p class="note-l center" style="top:600px;color:var(--ball);--o:4" data-reveal>everyone starts at love</p>
+
+  <div class="pin" style="left:270px;top:990px;--o:9"><div class="photo" style="width:400px;height:500px;rotate:3deg;--mw:165px;--mh:206px" data-reveal><img loading="lazy" decoding="async" src="img/m-a11.jpg" alt="Mixed doubles pair ready at the net"></div></div>
+  <div class="pin" style="left:720px;top:1060px;--o:8"><div class="photo" style="width:448px;height:560px;rotate:-2deg;--mw:300px;--mh:375px" data-reveal><img loading="lazy" decoding="async" src="img/m-a40.jpg" alt="Two players high-fiving over the net"></div></div>
+  <div class="pin" style="left:1170px;top:980px;--o:9"><div class="photo" style="width:400px;height:500px;rotate:2deg;--mw:165px;--mh:206px" data-reveal><img loading="lazy" decoding="async" src="img/m-b16.jpg" alt="Player picking up a ball on clay"></div></div>
+</section>
+
+<!-- ============ Choose your side ============ -->
+<section class="sec cream flow" id="sides" style="height:1472px">
+  <h2 class="h1 center accent" style="top:120px" data-reveal>Pick a side. Love all.</h2>
+  <p class="lead center" style="top:270px" data-reveal>For one weekend, the club splits in two. Choose White or Black, <br>wear your colours and help your side climb the scoreboard.</p>
+  <p class="note-m center" style="top:354px" data-reveal>after the final point, the rivalry stays on court.</p>
+
+  <div class="pin" style="left:378px;top:813px">
+    <button class="side-card white" data-side="White Side" style="--r:-5deg" aria-pressed="true">
+      <span class="side-photo"><img loading="lazy" decoding="async" class="crop" src="img/side-white.jpg" alt="" style="width:100%;height:182.95%;left:0;top:-31.1%;transform-origin:50% 44.33%"></span>
+      <span class="h2 side-title">White Side</span>
+      <span class="body side-body">Crisp whites. Clean lines. <br>A soft spot for tradition.</span>
+      <span class="note-m side-note">understated? <br>never unnoticed.</span>
+      <span class="btn btn-outline label side-btn">Choose White <span>→</span></span>
+      <span class="sticker side-picked">your side ✓</span>
+    </button>
+  </div>
+  <span class="ball sides-ball" style="--s:110px;left:651px;top:799px"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span>
+  <div class="pin" style="left:1034px;top:857px">
+    <button class="side-card black" data-side="Black Side" style="--r:2.9deg" aria-pressed="false">
+      <span class="side-photo"><img loading="lazy" decoding="async" class="crop" src="img/side-black.jpg" alt="" style="width:100%;height:205.76%;left:0;top:-18.52%;transform-origin:50% 33.3%"></span>
+      <span class="h2 side-title">Black Side</span>
+      <span class="body side-body">Sharp silhouettes. Dark shades. <br>No interest in blending in.</span>
+      <span class="note-m side-note">tradition looks better <br>with a twist.</span>
+      <span class="btn btn-cream label side-btn">Choose Black <span>→</span></span>
+      <span class="sticker side-picked">your side ✓</span>
+    </button>
+  </div>
+
+  <div class="dress" data-reveal>
+    <span class="pill label">Dress code</span>
+    <span class="lead">Build your look around your side’s colour. One contrasting detail is encouraged.</span>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"></div></div>
+
+<!-- ============ Schedule ============ -->
+<section class="sec card flow" id="schedule" style="height:3358px">
+  <h2 class="h1 accent" style="left:48px;top:120px" data-reveal>Three days. Three sets.</h2>
+
+  <div class="ct days-row">
+    <div class="ct day-col">
+      <div class="day" style="left:48px" data-reveal>
+        <img loading="lazy" decoding="async" class="crop" src="img/day16.jpg" alt="" style="width:110.94%;height:156.27%;left:-5.47%;top:-28.14%;transform-origin:50% 50%"><span class="scrim"></span>
+        <span class="h1 day-num">16</span><span class="pill label" style="left:24px;top:24px">Friday</span>
+      </div>
+      <div class="set-head" style="left:48px"><span class="pill label">Set 01</span><span class="h4">First serve</span></div>
+      <p class="body set-body" style="left:48px">The doors open, the first balls fly and you finally meet your doubles partner. Ease into the weekend on the social courts, then catch the opening team matches and live music after sunset.</p>
+    </div>
+    <div class="ct day-col">
+      <div class="day" style="left:504px" data-reveal>
+        <img loading="lazy" decoding="async" src="img/day17.jpg" alt=""><span class="scrim"></span>
+        <span class="h1 day-num">17</span><span class="pill label" style="left:24px;top:24px">Saturday</span>
+      </div>
+      <div class="set-head" style="left:504px"><span class="pill label">Set 02</span><span class="h4">The rivalry</span></div>
+      <p class="body set-body" style="left:504px">White versus Black, all afternoon. The matches are grouped by playing level, but every point adds to your team’s score. Between games, there’s plenty of time to watch, practise or find a new partner.</p>
+    </div>
+    <div class="ct day-col">
+      <div class="day" style="left:960px" data-reveal>
+        <img loading="lazy" decoding="async" src="img/day18.jpg" alt=""><span class="scrim"></span>
+        <span class="h1 day-num">18</span><span class="pill label" style="left:24px;top:24px">Sunday</span>
+      </div>
+      <div class="set-head" style="left:960px"><span class="pill label">Set 03</span><span class="h4">The final set</span></div>
+      <p class="body set-body" style="left:960px;width:340px">The last matches decide the winning side. There’s a trophy to lift, a final performance on centre court and no reason to rush home.</p>
+    </div>
+  </div>
+
+  <!-- Nine courts -->
+  <div class="courts" data-reveal>
+    <h3 class="h3" style="left:56px;top:56px">Nine courts. <br>Two ways to play.</h3>
+    <span class="h4" style="left:56px;top:216px">3 match courts</span>
+    <p class="body-s" style="left:56px;top:264px">Team doubles and tournament <br>matches, arranged by experience.</p>
+    <span class="h4" style="left:376px;top:216px">6 social courts</span>
+    <p class="body-s" style="left:376px;top:264px">Friendly games and practice. <br>Available for advance booking <br>subject to court availability.</p>
+    <span class="rule" style="top:386px"></span>
+    <span class="h4" style="left:56px;top:406px">09:00–14:00</span>
+    <p class="body-s" style="left:276px;top:404px">Social-court reservations included with every pass.</p>
+    <span class="rule" style="top:470px"></span>
+    <span class="h4" style="left:56px;top:490px">14:00–18:00</span>
+    <p class="body-s" style="left:276px;top:488px">Extended social-court booking <br>window for Seeded and Grand Slam.</p>
+    <div class="photo" style="position:absolute;left:744px;top:56px;width:320px;height:478px;border-radius:28px;--mw:176px;--mh:262px"><img loading="lazy" decoding="async" src="img/s-b41.jpg" alt=""></div>
+    <div class="photo" style="position:absolute;left:1088px;top:56px;width:200px;height:290px;border-radius:28px;--mw:118px;--mh:262px"><img loading="lazy" decoding="async" src="img/s-b39.jpg" alt=""></div>
+    <div class="court-map" id="courtMap"></div>
+    <p class="caption" style="left:1088px;top:510px;opacity:.75">3 match courts in clay <br>6 social courts in outline</p>
+    <div class="pin" style="left:814px;top:62px"><span class="pill label" style="rotate:5deg">3 match courts</span></div>
+    <div class="pin" style="left:1228px;top:342px"><span class="pill label" style="rotate:-4deg">6 social courts</span></div>
+  </div>
+
+  <!-- A day at the club -->
+  <h3 class="h3 accent" style="left:48px;top:1750px" data-reveal>A day at the club</h3>
+  <span class="timeline" id="timeline"><span class="timeline-fill"></span></span>
+  <div class="ct slots-row">
+    <div class="slot" style="left:48px"><div class="photo slot-photo"><img loading="lazy" decoding="async" src="img/s-e22.jpg" alt=""></div><span class="ball slot-ball" style="--s:24px"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span><span class="h3 slot-time">09:00</span><span class="lead slot-label">Open courts &amp; coaching</span></div>
+    <div class="slot" style="left:390px"><div class="photo slot-photo"><img loading="lazy" decoding="async" src="img/s-b7.jpg" alt=""></div><span class="ball slot-ball" style="--s:24px"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span><span class="h3 slot-time">12:00</span><span class="lead slot-label">Food court opens</span></div>
+    <div class="slot" style="left:732px"><div class="photo slot-photo"><img loading="lazy" decoding="async" src="img/s-a8.jpg" alt=""></div><span class="ball slot-ball" style="--s:24px"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span><span class="h3 slot-time">14:00</span><span class="lead slot-label">Team matches</span></div>
+    <div class="slot" style="left:1074px"><div class="photo slot-photo"><img loading="lazy" decoding="async" class="crop" src="img/s-d27.jpg" alt="" style="width:100%;height:176.62%;left:0;top:-71.64%;transform-origin:50% 68.87%"></div><span class="ball slot-ball" style="--s:24px"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span><span class="h3 slot-time">20:00</span><span class="lead slot-label">Live on centre court</span></div>
+  </div>
+
+  <!-- Coaching -->
+  <h3 class="h3 accent" style="left:48px;top:2368px" data-reveal>Want some one-to-one <br>time on court?</h3>
+  <div class="coach-copy" data-reveal>
+    <p class="body">Our guest coaches offer private lessons every morning. Work on your serve, <br>refine your footwork or simply get a fresh perspective on your game.</p>
+    <div class="facts"><span class="pill label">Private coaching</span><span class="pill label">€85 / 60 minutes</span><span class="pill label">Advance request required</span></div>
+  </div>
+
+  <div class="ct coach-row">
+    <div class="pin" style="left:264px;top:2878px"><div class="coach light" style="--r:-3deg" data-reveal>
+      <div class="photo coach-photo"><img loading="lazy" decoding="async" class="crop" src="img/coach1.jpg" alt="" style="width:100%;height:180.9%;left:-1.1%;top:-15.16%;transform-origin:51.1% 36.02%"></div>
+      <span class="h3 coach-name">Lucien <br>Moreau</span><span class="body-s coach-desc">Serve and <br>first strike.</span><span class="note-m coach-note">fixes a toss <br>in ten minutes.</span>
+    </div></div>
+    <div class="pin" style="left:720px;top:2918px"><div class="coach dark-c" style="--r:2.5deg" data-reveal>
+      <div class="photo coach-photo"><img loading="lazy" decoding="async" class="crop" src="img/coach2.jpg" alt="" style="width:100%;height:153.89%;left:0.61%;top:-10.22%;transform-origin:49.39% 39.13%"></div>
+      <span class="h3 coach-name">Inès <br>Caron</span><span class="body-s coach-desc">Footwork <br>and timing.</span><span class="note-m coach-note">you will run. <br>thank her later.</span>
+    </div></div>
+    <div class="pin" style="left:1176px;top:2878px"><div class="coach light" style="--r:-2.5deg" data-reveal>
+      <div class="photo coach-photo"><img loading="lazy" decoding="async" class="crop" src="img/coach3.jpg" alt="" style="width:100%;height:179.99%;left:0.05%;top:-37.44%;transform-origin:49.95% 48.58%"></div>
+      <span class="h3 coach-name">Henri <br>Valette</span><span class="body-s coach-desc">A fresh perspective <br>on your game.</span><span class="note-m coach-note">forty summers <br>on clay.</span>
+    </div></div>
+  </div>
+  <span class="ball deco-ball" style="--s:64px;left:470px;top:2528px;z-index:3"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span>
+</section>
+
+<!-- ============ Ball drop — fast transition ============ -->
+<section class="sec court" id="balldrop" style="height:1000px">
+  <span class="court-line" style="left:0;top:330px;width:1440px;height:5px"></span>
+  <span class="court-line" style="left:717px;top:330px;width:5px;height:670px"></span>
+  <h2 class="h1 match-ends" style="left:48px;top:120px;color:var(--cream)">The match ends.</h2>
+  <div class="pile" id="pile" aria-hidden="true"></div>
+  <span class="pile-fade" aria-hidden="true"></span>
+  <div class="pile pile-over" id="pileOver" aria-hidden="true"></div>
+  <h2 class="h1 sides-gone" style="left:48px;top:640px;color:var(--wine)">The sides <br>disappear.</h2>
+</section>
+
+<!-- ============ Evenings ============ -->
+<section class="sec dark flow" id="evenings" style="height:2072px">
+  <h2 class="h1" style="left:48px;top:120px" data-reveal>After the match.</h2>
+  <div class="col" style="left:48px;top:310px;gap:24px" data-reveal>
+    <h3 class="h3">The court has <br>a second life <br>after sunset.</h3>
+    <p class="body">The net comes down, the music starts and the tables fill <br>up. That person you spent the afternoon trying to beat? <br>There’s a good chance they’ll be sitting next to you tonight.</p>
+  </div>
+  <div class="pin" style="left:888.6px;top:505.9px"><div class="photo" style="width:318px;height:460px;rotate:-8.16deg;--mw:158px;--mh:228px" data-reveal><img loading="lazy" decoding="async" src="img/e-c7.jpg" alt=""></div></div>
+  <div class="pin" style="left:1195.3px;top:596.7px;--m:36px 0 0"><div class="photo" style="width:318px;height:460px;rotate:7.02deg;--mw:158px;--mh:228px" data-reveal><img loading="lazy" decoding="async" src="img/e-c0.jpg" alt=""></div></div>
+  <div class="pin" style="left:415.5px;top:646.4px;--m:-6px 0 18px"><span class="note-l" style="rotate:-4deg;color:var(--ball)">stay a little longer</span></div>
+
+  <div class="reason" style="left:48px" data-reveal><img loading="lazy" decoding="async" src="img/e-live.jpg" alt=""><span class="pill label" style="left:24px;top:24px">Every evening · 20:00</span></div>
+  <span class="h4" style="left:48px;top:1270px">Live on centre court</span>
+  <p class="body" style="left:48px;top:1318px">Music every evening at 20:00, with a special <br>closing performance on Sunday.</p>
+
+  <div class="reason" style="left:504px" data-reveal><img loading="lazy" decoding="async" src="img/e-food.jpg" alt=""><span class="pill label" style="left:24px;top:24px">Daily from noon</span></div>
+  <span class="h4" style="left:504px;top:1270px">The food court</span>
+  <p class="body" style="left:504px;top:1318px">Good food between matches; long, unhurried <br>evenings around the tables. Open daily from noon.</p>
+
+  <div class="reason" style="left:960px" data-reveal><img loading="lazy" decoding="async" src="img/e-bar.jpg" alt=""><span class="pill label" style="left:24px;top:24px">Bar opens at deuce</span></div>
+  <span class="h4" style="left:960px;top:1270px">The bar</span>
+  <p class="body" style="left:960px;top:1318px">Spritzes, martinis, wine and alcohol-free <br>favourites. Drinks are purchased <br>separately, apart from the welcome drink.</p>
+
+  <div class="closing" data-reveal>
+    <img loading="lazy" decoding="async" class="crop-closing" src="img/e-table.jpg" alt=""><span class="closing-scrim"></span>
+    <span class="h2">Different sides. Same table.</span>
+  </div>
+</section>
+
+<!-- ============ Passes ============ -->
+<section class="sec cream flow" id="passes" style="height:1611px">
+  <h2 class="h1 accent" style="left:48px;top:120px" data-reveal>Make the weekend yours.</h2>
+  <div class="col" style="left:48px;top:262px;gap:12px" data-reveal>
+    <p class="lead">Come for the atmosphere, get into the draw <br>or make a proper occasion of it.</p>
+    <p class="note-m" style="rotate:2.5deg;transform-origin:left;margin-left:6px">three ways to spend the weekend.</p>
+  </div>
+  <div id="passList"></div>
+  <p class="body-s center" style="top:1445px">All prices are per person for the full three-day event. Food and drinks are paid separately unless specifically <br>included. Coaching is an optional extra. Court reservations and private lessons are subject to availability.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec card flow" id="faq" style="height:1100px">
+  <h2 class="h2 accent" style="left:48px;top:120px" data-reveal>Before you <br>step on court</h2>
+  <div class="faq" id="faqList"></div>
+  <div class="pin" style="left:250px;top:620px;--m:12px 0 0"><div class="photo" style="width:340px;height:430px;rotate:4deg;--mw:190px;--mh:240px" data-reveal><img loading="lazy" decoding="async" src="img/f-a30.jpg" alt=""></div></div>
+  <div class="pin" style="left:470px;top:860px;--m:90px 0 0 -30px"><div class="photo" style="width:240px;height:300px;rotate:-5deg;border-radius:32px;--mw:140px;--mh:175px" data-reveal><img loading="lazy" decoding="async" src="img/f-a0.jpg" alt=""></div></div>
+</section>
+
+<!-- ============ Request a pass ============ -->
+<section class="sec dark flow" id="request" style="min-height:1207px">
+  <h2 class="h1" style="left:48px;top:120px" data-reveal>Game. Set. <br>See you.</h2>
+  <p class="body" style="left:48px;top:400px" data-reveal>Your side of the net is waiting. Pick your pass and tell us <br>a little about yourself — we’ll email you with the next steps.</p>
+  <div class="pin" style="left:505px;top:503.5px"><span class="note-l" style="rotate:2.08deg;color:var(--ball)">we are waiting</span></div>
+  <div class="pin" style="left:220px;top:800px;--m:8px 0 0"><div class="photo" style="width:300px;height:390px;rotate:4deg;--mw:170px;--mh:221px" data-reveal><img loading="lazy" decoding="async" src="img/r-a44.jpg" alt=""></div></div>
+  <div class="pin" style="left:450px;top:960px;--m:70px 0 0 -24px"><div class="photo" style="width:250px;height:320px;rotate:-5deg;border-radius:32px;--mw:140px;--mh:180px" data-reveal><img loading="lazy" decoding="async" src="img/r-b47.jpg" alt=""></div></div>
+  <span class="ball deco-ball" style="--s:70px;left:330px;top:1020px;z-index:2"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span>
+
+  <form class="form" id="form" novalidate>
+    <div class="form-body">
+      <label class="field"><span class="caption">Your name</span><input class="h5" name="name" placeholder="Camille Laurent" autocomplete="name"><span class="caption field-err">Tell us what to call you.</span></label>
+      <label class="field"><span class="caption">Email address</span><input class="h5" name="email" type="email" placeholder="camille@email.com" autocomplete="email"><span class="caption field-err">We need a valid email to reply.</span></label>
+      <div class="group" data-group="side"><span class="caption">Your side</span><div class="chips">
+        <button type="button" class="chip label" data-value="White Side">White Side</button>
+        <button type="button" class="chip label" data-value="Black Side">Black Side</button>
+      </div></div>
+      <div class="group" data-group="pass"><span class="caption">Your pass</span><div class="chips">
+        <button type="button" class="chip label" data-value="Wildcard">Wildcard</button>
+        <button type="button" class="chip label" data-value="Seeded">Seeded</button>
+        <button type="button" class="chip label" data-value="Grand Slam">Grand Slam</button>
+      </div></div>
+      <div class="extra" id="extra"><div class="extra-inner">
+        <div class="group" data-group="level"><span class="caption">Playing level</span><div class="chips">
+          <button type="button" class="chip label" data-value="New to tennis">New to tennis</button>
+          <button type="button" class="chip label" data-value="Casual">Casual</button>
+          <button type="button" class="chip label" data-value="Regular">Regular</button>
+          <button type="button" class="chip label" data-value="Competitive">Competitive</button>
+        </div></div>
+        <div class="group" data-group="partner"><span class="caption">Doubles partner</span><div class="chips">
+          <button type="button" class="chip label" data-value="Find me a partner">Find me a partner</button>
+          <button type="button" class="chip label" data-value="I’m joining with a partner">I’m joining with a partner</button>
+        </div></div>
+      </div></div>
+      <div class="col" style="position:static;gap:8px">
+        <label class="check"><input type="checkbox" name="coaching"><span class="check-box"></span><span class="body-s">I’m interested in a private coaching <br>session (€85 / 60 minutes).</span></label>
+        <span class="caption" style="opacity:.7">Optional. Session times and payment will be confirmed separately.</span>
+      </div>
+      <button class="btn btn-primary label" type="submit">Request my pass <span>→</span></button>
+      <p class="body-s">No payment now. This is a request, not a confirmed booking. <br>We’ll email you with availability, payment details and next steps.</p>
+    </div>
+    <div class="form-done" hidden>
+      <span class="ball" style="--s:64px;position:relative"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span>
+      <h3 class="h3 done-title"></h3>
+      <p class="body done-text"></p>
+      <button type="button" class="btn btn-outline label" id="editReq">Edit my request <span>→</span></button>
+    </div>
+  </form>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"></div></div>
+
+<!-- ============ Footer ============ -->
+<footer class="sec footer flow" style="height:860px">
+  <span class="h3" style="left:48px;top:96px">Love All</span>
+  <p class="body-s" style="left:48px;top:176px">A three-day tennis weekend on the French Riviera. <br>Team matches by day, music and long tables after sunset.</p>
+  <a class="btn btn-cream label" href="#request" style="position:absolute;left:48px;top:270px">Request a pass <span>→</span></a>
+  <div class="foot-col" style="left:618px"><span class="caption">Explore</span><a href="#about">About</a><a href="#schedule">Schedule</a><a href="#evenings">Evenings</a><a href="#passes">Passes</a><a href="#faq">FAQ</a></div>
+  <div class="foot-col" style="left:846px"><span class="caption">The event</span><span>16–18 July 2027</span><span>Friday – Sunday</span><span>French Riviera</span><span>Nine clay courts</span></div>
+  <div class="foot-col" style="left:1074px"><span class="caption">Contact</span><a href="mailto:hello@loveall.club">hello@loveall.club</a><a href="#top">Instagram</a><a href="#top">Press &amp; partners</a></div>
+  <span class="foot-rule" style="top:380px"></span>
+  <span class="display" style="left:78px;top:400px">Love All.</span>
+  <span class="ball foot-ball" style="--s:130px;left:1210px;top:410px"><img loading="lazy" decoding="async" src="img/ball.png" alt=""></span>
+  <div class="pin" style="left:720px;top:444.5px"><span class="note-m" style="rotate:.37deg;color:var(--ball)">event is fictional. the tan is not.</span></div>
+  <span class="foot-rule" style="top:770px"></span>
+  <span class="caption" style="left:48px;top:796px">© 2027 Love All Tennis Club</span>
+  <div class="foot-legal caption"><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div>
+</footer>
+</main>
+
+<script src="app.js?v=37"></script>
+</body>
+</html>
