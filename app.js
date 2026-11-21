@@ -53,7 +53,7 @@
 
   /* ---------- Marquee ---------- */
   const ballImg = s => `<span class="ball" style="--s:${s}px"><img src="img/ball.png" alt=""></span>`;
-  const words = ['16–18 July 2027', 'French Riviera', 'Play at your level. Meet beyond it.'];
+  const words = ['16–18 July 2027', 'French Riviera', 'Play at&nbsp;your level. Meet beyond it.'];
   const run = Array.from({ length: 4 }, () => words.map(w => `${ballImg(16)}<span class="label">${w}</span>`).join('')).join('');
   $$('.marquee-track').forEach(t => (t.innerHTML = run + run));
 
@@ -63,12 +63,12 @@
 
   /* ---------- Passes ---------- */
   const passes = [
-    { id: 'Wildcard', cls: 'p1', no: '01', price: '€290', note: 'for the courts, the crowd <br>and everything after.',
-      items: ['Three-day admission', 'Social-court booking, 09:00–14:00 <br>(subject to availability)', 'All matches and evening performances', 'Food court and bar access (purchases separate)', 'One welcome drink'] },
-    { id: 'Seeded', cls: 'p2', no: '02', price: '€490', note: 'your name in the draw.', featured: true, intro: 'Everything in Wildcard, plus:',
-      items: ['Entry into the team doubles tournament; <br>partners and opponents matched by experience', 'Extended social-court bookings until 18:00', 'Your side’s cap and socks'] },
-    { id: 'Grand Slam', cls: 'p3', no: '03', price: '€890', note: 'the full club weekend.', intro: 'Everything in Seeded, plus:',
-      items: ['Priority booking for social courts', 'Dinner by the net', 'Reserved front-row seating <br>at the Sunday closing show', 'Exclusive LOVE ALL gift'] },
+    { id: 'Wildcard', cls: 'p1', no: '01', price: '€290', note: 'for&nbsp;the&nbsp;courts, the&nbsp;crowd <br>and&nbsp;everything after.',
+      items: ['Three-day admission', 'Social-court booking, 09:00–14:00 <br>(subject to&nbsp;availability)', 'All matches and&nbsp;evening performances', 'Food court and&nbsp;bar access (purchases separate)', 'One welcome drink'] },
+    { id: 'Seeded', cls: 'p2', no: '02', price: '€490', note: 'your name in&nbsp;the&nbsp;draw.', featured: true, intro: 'Everything in&nbsp;Wildcard, plus:',
+      items: ['Entry into the&nbsp;team doubles tournament; <br>partners and&nbsp;opponents matched by&nbsp;experience', 'Extended social-court bookings until 18:00', 'Your side’s cap and&nbsp;socks'] },
+    { id: 'Grand Slam', cls: 'p3', no: '03', price: '€890', note: 'the&nbsp;full club weekend.', intro: 'Everything in&nbsp;Seeded, plus:',
+      items: ['Priority booking for&nbsp;social courts', 'Dinner by&nbsp;the&nbsp;net', 'Reserved front-row seating <br>at&nbsp;the&nbsp;Sunday closing show', 'Exclusive LOVE ALL gift'] },
   ];
   $('#passList').innerHTML = passes.map((p, i) => `
     <div class="pass ${p.cls}" data-pass="${p.id}" style="top:${429 + i * 328}px" role="button" tabindex="0" aria-label="Choose ${p.id}" data-reveal>
@@ -96,13 +96,13 @@
 
   /* ---------- FAQ ---------- */
   const faqs = [
-    ['Do I have to be an experienced player?', 'No. Matches are grouped by experience, whether you’ve just started or play competitively. Tell us your level when you register.'],
-    ['Can I come on my own?', 'Of course. Most people do. Pick “Find me a partner” in the request form and we’ll pair you with someone at your level.'],
-    ['What if I only want to watch?', 'Take the Wildcard pass. It covers all matches, the evening performances, the food court and the bar, with no racket required.'],
-    ['Can I book a private coach?', 'Yes. Our guest coaches give private lessons every morning, €85 per 60 minutes. Tick the coaching box in the form and we’ll confirm a time separately.'],
-    ['Are food and drinks included?', 'Food and drinks are paid separately, apart from the welcome drink that comes with every pass. Grand Slam also includes dinner by the net.'],
-    ['What should I wear?', 'Build your look around your side’s colour, white or black. One contrasting detail is encouraged.'],
-    ['What if it rains?', 'Clay dries quickly. If a summer storm rolls in, play pauses and the schedule shifts; we’ll keep everyone posted on the day.'],
+    ['Do I have to&nbsp;be an&nbsp;experienced player?', 'No. Matches are grouped by&nbsp;experience, whether you’ve just started or&nbsp;play competitively. Tell us your level when you register.'],
+    ['Can I come on&nbsp;my own?', 'Of&nbsp;course. Most people do. Pick “Find me a&nbsp;partner” in&nbsp;the&nbsp;request form and&nbsp;we’ll pair you with someone at&nbsp;your level.'],
+    ['What if&nbsp;I only want to&nbsp;watch?', 'Take the&nbsp;Wildcard pass. It covers all matches, the&nbsp;evening performances, the&nbsp;food court and&nbsp;the&nbsp;bar, with no&nbsp;racket required.'],
+    ['Can I book a&nbsp;private coach?', 'Yes. Our guest coaches give private lessons every morning, €85 per&nbsp;60 minutes. Tick the&nbsp;coaching box in&nbsp;the&nbsp;form and&nbsp;we’ll confirm a&nbsp;time separately.'],
+    ['Are food and&nbsp;drinks included?', 'Food and&nbsp;drinks are paid separately, apart from the&nbsp;welcome drink that comes with every pass. Grand Slam also includes dinner by&nbsp;the&nbsp;net.'],
+    ['What should I wear?', 'Build your look around your side’s colour, white or&nbsp;black. One contrasting detail is encouraged.'],
+    ['What if&nbsp;it rains?', 'Clay dries quickly. If&nbsp;a&nbsp;summer storm rolls in, play pauses and&nbsp;the&nbsp;schedule shifts; we’ll keep everyone posted on&nbsp;the&nbsp;day.'],
   ];
   $('#faqList').innerHTML = faqs.map(([q, a], i) => `
     <div class="faq-item ${i === 0 ? 'open' : ''}">
