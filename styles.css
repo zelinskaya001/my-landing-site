@@ -165,8 +165,11 @@ html.cursor-native .cursor{opacity:0}
 .sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- Manifesto ---------- */
-.score-ball{transition:transform .5s var(--spring)}
-@media (hover:hover){.score-ball:hover{transform:translateY(-10px) rotate(40deg)}}
+/* Hover balls: only the picture jumps, the hover area stays put (otherwise the ball leaves the cursor and flickers).
+   Desktop layout with a mouse only: on phones and tablets there is nothing to hover. */
+.score-ball img,.foot-ball img{transform-origin:50% 45.2%}  /* the ball's centre inside the picture */
+.score-ball img{transition:transform .5s var(--spring)}
+@media (hover:hover) and (min-width:1024px){.score-ball:hover img{transform:translateY(-10px) rotate(40deg)}}
 
 /* ---------- Side cards ---------- */
 .side-card{position:relative;display:block;width:660px;height:740px;border-radius:40px;overflow:hidden;text-align:left;
@@ -361,8 +364,8 @@ html.cursor-native .cursor{opacity:0}
 @media (hover:hover){.foot-col a:hover,.foot-legal a:hover{color:var(--ball)}}
 .foot-rule{left:48px;width:1344px;height:1px;background:var(--cream);opacity:.35}
 .foot-legal{left:auto;right:48px;top:796px;display:flex;gap:28px}
-.foot-ball{transition:transform .6s var(--spring)}
-@media (hover:hover){.foot-ball:hover{transform:translateY(-24px) rotate(120deg)}}
+.foot-ball img{transition:transform .6s var(--spring)}
+@media (hover:hover) and (min-width:1024px){.foot-ball:hover img{transform:translateY(-24px) rotate(120deg)}}
 
 /* ---------- Scroll reveal ---------- */
 [data-reveal]{opacity:0;translate:0 40px;transition:opacity .8s var(--ease),translate .9s var(--ease),rotate .7s var(--spring)}
